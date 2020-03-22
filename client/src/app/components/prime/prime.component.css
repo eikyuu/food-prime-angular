@@ -1,0 +1,48 @@
+.background_meat {
+  background: url("/assets/img/steak-3766548_1920.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.background_meat_prime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.prime_row_p, .prime_row_p-center {
+  font-size:2em;
+  letter-spacing: 5px;
+}
+
+.prime_row_p-center {
+  text-align: center;
+}
+
+.prime {
+  height: 7.5rem;
+  border: solid 10px white;
+  width: 20rem;
+  text-align: center;
+}
+
+.prime_title, .story_title {
+  font-size: 5.5em;
+}
+
+@media (min-width: 740px) {
+
+  .prime {
+      height: 15rem;
+      border: solid 20px white;
+      width: 42rem;
+      text-align: center;
+  }
+
+  .prime_title {
+      font-size: 10.5em;
+  }
+
+}
