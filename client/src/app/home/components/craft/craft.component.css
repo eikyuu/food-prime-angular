@@ -1,0 +1,29 @@
+.background_craft {
+  background: url("/assets/img/cider-822262_1920.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.title_craft {
+  color: white;
+  font-size: 10em;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60rem;
+}
+
+@media (min-width: 740px) {
+
+
+
+}
+
+@media (min-width: 1200px) {
+
+  .background_craft {
+    height: 60rem;
+  }
+
+}

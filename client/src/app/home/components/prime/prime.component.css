@@ -46,3 +46,11 @@
   }
 
 }
+
+@media (min-width: 1200px) {
+
+  .background_meat {
+    height: 60rem;
+  }
+
+}
