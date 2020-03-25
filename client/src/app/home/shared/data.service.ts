@@ -10,12 +10,11 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  configUrl = 'http://localhost:3000/api/movies';
+  public api = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
-  public getMovies(): Observable<Movie> {
-    const url = `${this.configUrl}`;
-    return this.http.get<Movie>(url);
+  public getMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.api}/api/movies`);
   }
 }
