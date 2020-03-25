@@ -8,13 +8,13 @@ import { Movie } from '../../shared/movie';
 })
 export class StoryComponent implements OnInit {
 
-  public datas;
+  public datas: Movie[] = [];
 
   constructor(public dataService: DataService) { }
 
    ngOnInit() {
     this.dataService.getMovies().subscribe(
-            (paramMovies: Movie) => {
+            (paramMovies) => {
                this.datas =  paramMovies;
                console.log(this.datas);
             }
