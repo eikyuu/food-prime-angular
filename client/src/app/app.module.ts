@@ -8,6 +8,7 @@ import { PrimeComponent } from './home/components/prime/prime.component';
 import { StoryComponent } from './home/components/story/story.component';
 import { CraftComponent } from './home/components/craft/craft.component';
 import { HomeComponent } from './home/pages/home/home.component';
+import { BeerComponent } from './home/components/beer/beer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomeComponent } from './home/pages/home/home.component';
     PrimeComponent,
     StoryComponent,
     CraftComponent,
-    HomeComponent
+    HomeComponent,
+    BeerComponent
   ],
   imports: [
     BrowserModule,
