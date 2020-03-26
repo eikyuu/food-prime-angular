@@ -1,11 +1,13 @@
 // dotenv loads parameters (port and database config) from .env
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors')
 const bodyParser = require('body-parser');
 const { check, validationResult } = require('express-validator');
 const connection = require('./db');
 
 const app = express();
+app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

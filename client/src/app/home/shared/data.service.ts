@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 // J'importe le client HTTP
 import { HttpClient } from '@angular/common/http';
-import { Movie } from './movie';
+import { Section } from './section';
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -14,7 +14,7 @@ export class DataService {
 
   constructor(private http: HttpClient) {}
 
-  public getMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(`${this.api}/api/movies`);
+  public getSections(): Observable<Section[]> {
+    return this.http.get<Section[]>(`${this.api}/api/sections`);
   }
 }
