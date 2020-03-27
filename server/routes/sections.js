@@ -1,5 +1,5 @@
 const express = require('express');
-const connection = require('./db');
+const connection = require('../db');
 const router = express.Router();
 
 // respond to requests on `/api/sections`

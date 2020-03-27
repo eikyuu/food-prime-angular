@@ -5,5 +5,4 @@ const router = express.Router();
 
 router.use('/sections', sections);
 
-
 module.exports = router;
