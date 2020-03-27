@@ -1,10 +1,10 @@
 <section class="container-fluid background_story">
   <div class="row mt-5 mb-5 container_story">
-      <div class="mb-3 col-sm-12 col-lg-12 col-xl-6 background_our_story" *ngIf="datas && datas.length > 0">
+      <div class="mb-3 col-sm-12 col-lg-12 col-xl-6 background_our_story">
           <div class="story mb-3">
-              <h1 class="story_title mt-1">{{ datas[0].title }}</h1>
+              <h1 class="story_title mt-1">{{ sections[0]?.title }}</h1>
           </div>
-          <p class="text_story mt-5" >{{ datas[0].description }}</p>
+          <p class="text_story mt-5" >{{ sections[0]?.description }}</p>
       </div>
       <div class="row img_container">
           <img class="fit-picture col-xl-5 m-3" src="/assets/img/tacos-1613795_1920.jpg" alt="">

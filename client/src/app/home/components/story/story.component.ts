@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../shared/data.service';
+import { Component, OnInit, Input } from '@angular/core';
 import { Section } from '../../shared/section';
+
 @Component({
   selector: 'app-story',
   templateUrl: './story.component.html',
@@ -8,16 +8,11 @@ import { Section } from '../../shared/section';
 })
 export class StoryComponent implements OnInit {
 
-  public datas: Section[] = [];
+  @Input() sections: Section;
 
-  constructor(public dataService: DataService) { }
+  constructor() { }
 
    ngOnInit() {
-    this.dataService.getSections().subscribe(
-            (paramSections) => {
-               this.datas =  paramSections;
-               console.log(this.datas);
-            }
-        );
-  }
+
+   }
 }

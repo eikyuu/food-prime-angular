@@ -2,14 +2,9 @@
   <div class="row mt-5 mb-5 container_beer">
       <div class="mb-3 col-sm-12 col-lg-12 col-xl-6 background_our_beer">
           <div class="beer mb-3">
-              <h1 class="beer_title mt-1">OUR BEER</h1>
+              <h1 class="beer_title mt-1">{{ sections[1]?.title }}</h1>
           </div>
-          <p class="text_beer mt-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mi eget nulla imperdiet, nec condimentum augue porttitor.
-              Fusce mattis urna a enim ornare dapibus. Morbi id fringilla dolor. Mauris massa ex, tempor maximus ultricies ac, cursus at felis.
-              Nunc sed nunc tristique, ultricies mi sit amet, ullamcorper eros. Proin quis nibh vel arcu suscipit feugiat.
-              Etiam pharetra sem vel metus ultrices, eget cursus purus tincidunt.
-          </p>
+          <p class="text_beer mt-5">{{ sections[1]?.description }}</p>
       </div>
       <div class="row img_container">
           <img class="fit-picture col-xl-12 m-3" src="/assets/img/beer-2536111_1920.jpg" alt="">

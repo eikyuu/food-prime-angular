@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Section } from '../../shared/section';
 
 @Component({
   selector: 'app-beer',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./beer.component.css']
 })
 export class BeerComponent implements OnInit {
+
+  @Input() sections: Section;
 
   constructor() { }
 

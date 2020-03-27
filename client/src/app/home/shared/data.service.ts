@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
 
-  public api = 'http://localhost:3000';
+  public api = 'http://localhost:3001';
 
   constructor(private http: HttpClient) {}
 
