@@ -2,7 +2,7 @@
   "name": "prime-angular",
   "version": "1.0.0",
   "moteurs": {
-    "nœud": "12.14.1"
+    "nœud": "12.14.x"
   },
   "description": "",
   "main": "index.js",
