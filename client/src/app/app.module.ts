@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { StoryComponent } from './home/components/story/story.component';
 import { CraftComponent } from './home/components/craft/craft.component';
 import { HomeComponent } from './home/pages/home/home.component';
 import { BeerComponent } from './home/components/beer/beer.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { BeerComponent } from './home/components/beer/beer.component';
     StoryComponent,
     CraftComponent,
     HomeComponent,
-    BeerComponent
+    BeerComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
