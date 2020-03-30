@@ -12,6 +12,8 @@ import { CraftComponent } from './home/components/craft/craft.component';
 import { HomeComponent } from './home/pages/home/home.component';
 import { BeerComponent } from './home/components/beer/beer.component';
 import { UserComponent } from './user/user.component';
+import { AdminDashboardComponent } from './admin/components/admin-dashboard/admin-dashboard.component';
+import { AdminSectionComponent } from './admin/components/admin-section/admin-section.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { UserComponent } from './user/user.component';
     CraftComponent,
     HomeComponent,
     BeerComponent,
-    UserComponent
+    UserComponent,
+    AdminDashboardComponent,
+    AdminSectionComponent
   ],
   imports: [
     BrowserModule,

@@ -19,4 +19,18 @@ router.get('/', (req, res) => {
     });
   });
 
+  router.put('/:id', async (req, res) => {
+    const idSection = req.params.id;
+    const formData = req.body;
+    console.log(req.body);
+    connection.query('UPDATE section SET ? WHERE id = ?', [formData, idSection], err => {
+        if (err) {
+          console.log(err);
+          res.status(500).send("Erreur lors de la modification d'un chantier");
+        } else {
+          res.status(200).send({ status: 'OK'});
+        }
+      });
+  });
+
 module.exports = router;

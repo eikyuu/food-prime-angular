@@ -17,4 +17,8 @@ export class DataService {
   public getSections(): Observable<Section[]> {
     return this.http.get<Section[]>(`${this.api}/api/sections`);
   }
+
+  public updateSection(section: Section, id: number): Observable<Section> {
+    return this.http.put<Section>(`${this.api}/api/sections/${id}`, section);
+  }
 }
