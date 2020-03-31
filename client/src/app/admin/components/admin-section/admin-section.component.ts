@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Section } from 'src/app/home/shared/section';
 import { DataService } from 'src/app/home/shared/data.service';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,12 +10,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-section.component.css']
 })
 export class AdminSectionComponent implements OnInit {
-  editSection = false;
 
   sectionForm = this.fb.group({
     id: [''],
-    title: [''],
-    description: ['']
+    title: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]],
+    description: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(1000)]]
   });
 
   public sections: Section[] = [];
@@ -34,7 +33,6 @@ export class AdminSectionComponent implements OnInit {
       this.sectionForm.get('id').setValue(section.id);
       this.sectionForm.get('title').setValue(section.title);
       this.sectionForm.get('description').setValue(section.description);
-      this.editSection = true;
     }
 
     onSubmit() {
