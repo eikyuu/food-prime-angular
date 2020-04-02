@@ -1,0 +1,31 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="form-group container mt-5">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+        {{ registerForm.get('email').errors?.email.rules }}
+        <div *ngIf="registerForm.get('email').errors && !registerForm.get('email').pristine" class="error-msg">
+            <div [hidden]="!registerForm.get('email').errors.required">email is required.</div>
+            <div [hidden]="!registerForm.get('email').invalid">email is invalid.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        {{ registerForm.get('password').errors?.password.rules }}
+        <div *ngIf="registerForm.get('password').errors && !registerForm.get('password').pristine" class="error-msg">
+            <div [hidden]="!registerForm.get('password').errors.required">password is required.</div>
+            <div [hidden]="!registerForm.get('password').invalid">password is invalid.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputname1">name</label>
+        <input type="text" class="form-control" id="exampleInputname1" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputXipcode1">lastname</label>
+        <input type="text" class="form-control" id="exampleInputlastname1" formControlName="lastname">
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+  </div>
+</form>

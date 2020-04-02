@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Section } from 'src/app/home/shared/section';
-import { DataService } from 'src/app/home/shared/data.service';
+import { Section } from 'src/app/shared/section';
+import { DataService } from 'src/app/shared/data.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 

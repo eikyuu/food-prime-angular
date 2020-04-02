@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PrimeComponent } from './home/components/prime/prime.component';
-import { StoryComponent } from './home/components/story/story.component';
-import { CraftComponent } from './home/components/craft/craft.component';
-import { HomeComponent } from './home/pages/home/home.component';
-import { BeerComponent } from './home/components/beer/beer.component';
-import { UserComponent } from './user/user.component';
-import { AdminDashboardComponent } from './admin/components/admin-dashboard/admin-dashboard.component';
-import { AdminSectionComponent } from './admin/components/admin-section/admin-section.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PrimeComponent } from './components/prime/prime.component';
+import { StoryComponent } from './components/story/story.component';
+import { CraftComponent } from './components/craft/craft.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BeerComponent } from './components/beer/beer.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import { AdminSectionComponent } from './components/admin-section/admin-section.component';
+import { AuthGuard } from './shared/auth.guard';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,17 +26,19 @@ import { AdminSectionComponent } from './admin/components/admin-section/admin-se
     CraftComponent,
     HomeComponent,
     BeerComponent,
-    UserComponent,
+    RegisterComponent,
     AdminDashboardComponent,
-    AdminSectionComponent
+    AdminSectionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
