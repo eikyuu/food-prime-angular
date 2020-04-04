@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../shared/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
+import { SignupService } from 'src/app/shared/services/signup.service';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { emailValidator } from 'src/app/core/email-validator';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,40 +13,27 @@ import { AuthService } from '../../shared/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  message: string = 'Vous êtes déconnecté. (pikachu/pikachu)';
-  public name: string;
-  public password: string;
+  signInForm: FormGroup;
 
-  constructor(public authService: AuthService, public router: Router) { }
+  constructor(private router: Router,
+              private formbuilder: FormBuilder,
+              private userService: UserService
+              ) { }
 
   ngOnInit() {
-  }
-  // Informe l'utilisateur sur son authentfication.
-  setMessage() {
-    this.message = this.authService.isLoggedIn ?
-        'Vous êtes connecté.' : 'Identifiant ou mot de passe incorrect.';
-  }
-
-  // Connecte l'utilisateur auprès du Guard
-  login() {
-    this.message = 'Tentative de connexion en cours ...';
-    this.authService.login(this.name, this.password).subscribe(() => {
-        this.setMessage();
-        if (this.authService.isLoggedIn) {
-            // Récupère l'URL de redirection depuis le service d'authentification
-            // Si aucune redirection n'a été définis, redirige l'utilisateur vers la liste des pokemons.
-            const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/';
-            // Redirige l'utilisateur
-            this.router.navigate([redirect]);
-        } else {
-            this.password = '';
-        }
+    this.signInForm = this.formbuilder.group({
+      email: ['', [Validators.required, emailValidator]],
+      password: ['', [Validators.required]]
     });
   }
 
-  // Déconnecte l'utilisateur
-  logout() {
-    this.authService.logout();
-    this.setMessage();
+  userConnexion() {
+    this.userService.connexion(this.signInForm.value).subscribe(() => {
+      this.router.navigate(['/dashboard']);
+    });
+  }
+
+  goToSignUp() {
+    this.router.navigate(['/inscription']);
   }
 }

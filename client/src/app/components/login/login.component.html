@@ -1,24 +1,40 @@
-<div class='row'>
-  <div class="col s12 m4 offset-m4">
-  <div class="card hoverable">
-    <div class="card-content center">
-      <span class="card-title">Page de connexion</span>
-      <p><em>{{message}}</em></p>
+<form [formGroup]="signInForm" (ngSubmit)="userConnexion()">
+  <div class="example-container boxForm">
+    <p class="top">Connexion</p>
+
+      <input
+        matInput
+        placeholder="Identifiant"
+        type="text"
+        name="login"
+        formControlName='email'
+      />
+
+    <div *ngIf="signInForm.get('email').errors && !signInForm.get('email').pristine" class="error">
+      <div [hidden]="!signInForm.get('email').errors.required">Ce champ est requis.</div>
+      <div [hidden]="!signInForm.get('email').invalid">Votre email est invalide.</div>
     </div>
-      <form #loginForm="ngForm">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" [(ngModel)]="name" name="name" required>
-        </div>
-        <div>
-          <label for="password">Password</label>
-          <input type="password" id="password" [(ngModel)]="password" name="password" required>
-        </div>
-      </form>
-    <div class="card-action center">
-      <a (click)="login()" class="waves-effect waves-light btn"  *ngIf="!authService.isLoggedIn">Se connecter</a>
-      <a (click)="logout()" *ngIf="authService.isLoggedIn">Se déconnecter</a>
+
+
+      <input
+        matInput
+        placeholder="Mot de passe"
+        type="password"
+        formControlName="password"
+      >
+
+
+    <div *ngIf="signInForm.get('password').errors && !signInForm.get('password').pristine" class="error">
+      <div [hidden]="!signInForm.get('password').errors.required">Ce champ est requis.</div>
     </div>
+
+    <div class="container">
+      <button mat-flat-button type="submit" [disabled]="!signInForm.valid">
+          Se connecter
+      </button>
+    </div>
+      <p>
+        <a routerLink="/inscription">S'inscrire ?</a>
+      </p>
   </div>
-  </div>
-</div>
+</form>

@@ -14,7 +14,7 @@ import { BeerComponent } from './components/beer/beer.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
 import { AdminSectionComponent } from './components/admin-section/admin-section.component';
-import { AuthGuard } from './shared/auth.guard';
+import { AuthGuard } from './core/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 
 @NgModule({

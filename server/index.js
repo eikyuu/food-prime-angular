@@ -4,7 +4,7 @@ const express = require('express');
 const api = require('./routes');
 const cors = require('cors')
 const bodyParser = require('body-parser');
-const { check, validationResult } = require('express-validator');
+// const { check, validationResult } = require('express-validator');
 
 const app = express();
 app.use(cors())

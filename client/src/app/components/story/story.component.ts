@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Section } from '../../shared/section';
+import { Section } from '../../shared/models/section';
 
 @Component({
   selector: 'app-story',

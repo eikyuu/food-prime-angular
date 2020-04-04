@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Section } from 'src/app/shared/section';
-import { DataService } from 'src/app/shared/data.service';
+import { Section } from 'src/app/shared/models/section';
+import { SectionService } from 'src/app/shared/services/section.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -19,14 +19,14 @@ export class AdminSectionComponent implements OnInit {
 
   public sections: Section[] = [];
 
-  constructor(public dataService: DataService, private fb: FormBuilder, private router: Router) { }
+  constructor(public sectionService: SectionService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.getSections();
   }
 
     getSections() {
-      this.dataService.getSections().subscribe(result => this.sections = result);
+      this.sectionService.getSections().subscribe(result => this.sections = result);
     }
 
     onEditSection(section: Section) {
@@ -37,7 +37,7 @@ export class AdminSectionComponent implements OnInit {
 
     onSubmit() {
       console.log(this.sectionForm.value.id);
-      this.dataService.updateSection(this.sectionForm.value, this.sectionForm.value.id).subscribe(result => result);
+      this.sectionService.updateSection(this.sectionForm.value, this.sectionForm.value.id).subscribe(result => result);
       window.location.reload();
   }
 }

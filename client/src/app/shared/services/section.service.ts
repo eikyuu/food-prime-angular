@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-// J'importe le client HTTP
 import { HttpClient } from '@angular/common/http';
-import { Section } from './section';
-import { map, tap } from 'rxjs/operators';
+import { Section } from '../models/section';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class SectionService {
 
   public api = 'http://localhost:3001';
 

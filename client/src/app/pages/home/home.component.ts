@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Section } from '../../shared/section';
-import { DataService } from '../../shared/data.service';
+import { Section } from '../../shared/models/section';
+import { SectionService } from '../../shared/services/section.service';
 
 @Component({
   selector: 'app-home',
@@ -11,14 +11,14 @@ export class HomeComponent implements OnInit {
 
   public sections: Section[] = [];
 
-  constructor(public dataService: DataService) { }
+  constructor(public sectionService: SectionService) { }
 
   ngOnInit() {
     this.getSections();
   }
 
   getSections() {
-    this.dataService.getSections().subscribe(
+    this.sectionService.getSections().subscribe(
       (paramSections) => {
          this.sections =  paramSections;
          console.log(this.sections);
