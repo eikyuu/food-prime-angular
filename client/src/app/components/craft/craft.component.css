@@ -11,12 +11,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60rem;
+  height: 100vh;
 }
 
 @media (min-width: 740px) {
 
-
+  .title_craft {
+    font-size: 4em;
+  }
 
 }
 
