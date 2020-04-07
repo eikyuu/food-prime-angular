@@ -9,7 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin/dashboard', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'admin/dashboard', component: AdminDashboardComponent },
   { path: 'login', component: LoginComponent }
 ];
 

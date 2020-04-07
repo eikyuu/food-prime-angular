@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
           console.log(err);
           res.status(500).send("Erreur lors de la modification d'un chantier");
         } else {
-          res.status(200).send({ status: 'OK'});
+          res.json();
         }
       });
   });

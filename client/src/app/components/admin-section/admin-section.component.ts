@@ -38,6 +38,6 @@ export class AdminSectionComponent implements OnInit {
     onSubmit() {
       console.log(this.sectionForm.value.id);
       this.sectionService.updateSection(this.sectionForm.value, this.sectionForm.value.id).subscribe(result => result);
-      window.location.reload();
+      this.sectionService.getSections().subscribe(result => this.sections = result);
   }
 }
