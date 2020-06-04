@@ -1,9 +1,9 @@
-.text_beer{
+.text_beer {
   font-size: 2em;
   text-align: center;
 }
 
-.beer{
+.beer {
   height: 4.5rem;
   border: solid 10px black;
   width: 100%;
@@ -11,11 +11,11 @@
 }
 
 .beer_title {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 900;
 }
 
-.background_beer{
+.background_beer {
   background: white;
   background-size: cover;
   flex-direction: row-reverse;
@@ -26,34 +26,33 @@
   width: 90vw;
 }
 
-.container_beer{
+.container_beer {
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 740px) {
-
-  .background_our_beer{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100%;
+  .background_our_beer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
   }
 
-  .beer{
-      width: 22rem;
+  .beer {
+    width: 22rem;
   }
 
   .img_container {
-      height: 40rem;
-      width: 40rem;
+    height: 40rem;
+    width: 40rem;
   }
 
-  .text_beer{
-      font-size: 1.5em;
-      text-align: center;
-      width: 80%;
+  .text_beer {
+    font-size: 1.5em;
+    text-align: center;
+    width: 80%;
   }
 
   .fit-picture {
@@ -63,8 +62,7 @@
 }
 
 @media (min-width: 1540px) {
-
-  .background_beer{
+  .background_beer {
     height: 48rem;
   }
 
@@ -74,6 +72,5 @@
 
   .img_container {
     width: 50rem;
-}
-
+  }
 }
